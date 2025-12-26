@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import CurrentLocation from "./currentLocation";
 import "./App.css";
+import "./EnhancedWeather.css";
+import WeatherAlerts from "./WeatherAlerts";
+import HourlyForecast from "./HourlyForecast";
+import SevenDayForecast from "./SevenDayForecast";
 
 function App() {
   return (
     <React.Fragment>
       <div className="container">
         <CurrentLocation />
+                  <WeatherAlerts weatherData={this.state.data} />
+              <HourlyForecast forecast={this.state.forecast} />
+              <SevenDayForecast forecast={this.state.forecast} />
       </div>
       <div className="footer-info">
         <a href="https://www.htmlhints.com/article/how-to-create-toggle-switch/93">
