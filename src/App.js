@@ -11,9 +11,9 @@ function App() {
     <React.Fragment>
       <div className="container">
         <CurrentLocation />
-                  <WeatherAlerts weatherData={this.state.data} />
-              <HourlyForecast forecast={this.state.forecast} />
-              <SevenDayForecast forecast={this.state.forecast} />
+{/*                  <WeatherAlerts weatherData={this.state.data} /> */}
+{/*              <HourlyForecast forecast={this.state.forecast} /> */}
+              {/*<SevenDayForecast forecast={this.state.forecast} /> */}
       </div>
       <div className="footer-info">
         <a href="https://www.htmlhints.com/article/how-to-create-toggle-switch/93">
