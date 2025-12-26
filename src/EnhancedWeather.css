@@ -1,0 +1,255 @@
+/* Enhanced Weather App Styles */
+
+/* Weather Alerts Styles */
+.weather-alerts-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 10px 0;
+}
+
+.alerts-toggle-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8787);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
+}
+
+.alerts-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+}
+
+.alerts-panel {
+  margin-top: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 5px solid;
+  animation: fadeIn 0.3s ease;
+}
+
+.alert-high {
+  background-color: #ffe0b2;
+  border-left-color: #ff9800;
+  color: #e65100;
+}
+
+.alert-critical {
+  background-color: #ffcdd2;
+  border-left-color: #f44336;
+  color: #b71c1c;
+  font-weight: bold;
+}
+
+/* Hourly Forecast Styles */
+.hourly-forecast {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.hourly-forecast h3 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.hours-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.hour-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hour-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hour-time {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.hour-icon {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0;
+}
+
+.hour-temp {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.hour-feels, .hour-humidity, .hour-wind, .hour-condition {
+  font-size: 12px;
+  margin: 3px 0;
+  opacity: 0.9;
+}
+
+/* Seven Day Forecast Styles */
+.seven-day-forecast {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(245, 87, 108, 0.3);
+}
+
+.seven-day-forecast h3 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.day-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.day-date {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.day-icon {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+}
+
+.day-condition {
+  font-size: 13px;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.day-temps {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.temp-max, .temp-min {
+  flex: 1;
+}
+
+.day-humidity, .day-wind {
+  font-size: 12px;
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hours-container,
+  .days-container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .hour-card,
+  .day-card {
+    padding: 10px;
+  }
+
+  .hour-icon,
+  .day-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .weather-alerts-container,
+  .hourly-forecast,
+  .seven-day-forecast {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .hour-card,
+  .day-card {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
